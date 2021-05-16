@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import UserRegisterView,UserLoginview,CreateAccountView,Balance,Withdrawview,Depositview
+from .views import UserRegisterView,UserLoginview,CreateAccountView,Balance,Withdrawview,Depositview,Transactionview
 
 urlpatterns = [
     path('register',UserRegisterView.as_view()),
@@ -24,6 +24,8 @@ urlpatterns = [
     path("balance/<int:acc_no>",Balance.as_view()),
     path("withdraw/<int:acc_no>",Withdrawview.as_view()),
     path("deposit/<int:acc_no>",Depositview.as_view()),
+    path("transaction",Transactionview.as_view()),
+    path("view_transaction/<int:acc_no",Transactionview.as_view())
 
 
 
